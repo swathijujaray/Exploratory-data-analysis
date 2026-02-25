@@ -38,15 +38,6 @@ This project performs an exploratory data analysis (EDA) on the WineQT dataset, 
 
 ---
 
-## Project Structure
-```
-├── Wine_Quality_Analysis.ipynb   # Main EDA notebook
-├── WineQT.csv                    # Dataset
-└── README.md                     # Project documentation
-```
-
----
-
 ## Key Findings
 - **Alcohol** is the strongest positive predictor of wine quality (correlation: 0.48)
 - **Volatile acidity** is the strongest negative factor — high levels produce a vinegary taste and lower quality scores
