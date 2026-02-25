@@ -1,75 +1,92 @@
-# Exploratory-data-analysis
+# 🍷 Wine Quality - Exploratory Data Analysis
 
-# 🍷 Wine Quality Exploratory Data Analysis (EDA)
-
-## 📌 Project Overview
-
-This project performs **Exploratory Data Analysis (EDA)** on the Wine Quality dataset to understand how various physicochemical properties influence wine quality ratings. The analysis uncovers patterns, correlations, and key factors affecting wine quality, helping prepare the data for predictive modeling.
+## Overview
+This project performs an exploratory data analysis (EDA) on the WineQT dataset, which contains physicochemical properties of red wine samples along with a quality rating. The goal is to understand the data, identify patterns, and determine which chemical features most influence wine quality.
 
 ---
 
-## 📂 Dataset
+## Dataset
+- **Source:** WineQT.csv
+- **Rows:** 1143 | **Columns:** 12 (after cleaning)
+- **Target Variable:** `quality` — a score from 3 to 8 assigned by wine experts
 
-The dataset contains chemical attributes of wine samples along with quality scores assigned by experts.
-
-### Features Include:
-
-* Fixed acidity
-* Volatile acidity
-* Citric acid
-* Residual sugar
-* Chlorides
-* Free sulfur dioxide
-* Total sulfur dioxide
-* Density
-* pH
-* Sulphates
-* Alcohol
-* **Quality (Target Variable)**
-
----
-
-## 🎯 Objectives
-
-* Explore the distribution of wine quality scores
-* Identify important features affecting wine quality
-* Detect outliers and anomalies
-* Analyze relationships between variables
-* Prepare data for machine learning models
+### Features
+| Feature | Description |
+|---|---|
+| fixed acidity | Most acids in wine that don't evaporate |
+| volatile acidity | Amount of acetic acid — too high makes wine taste vinegary |
+| citric acid | Adds freshness and flavour to wine |
+| residual sugar | Sugar remaining after fermentation |
+| chlorides | Amount of salt in wine |
+| free sulfur dioxide | Free form of SO₂ — prevents microbial growth |
+| total sulfur dioxide | Total amount of SO₂ |
+| density | Density of the wine |
+| pH | Acidity level (0–14 scale) |
+| sulphates | Additive that contributes to SO₂ levels |
+| alcohol | Alcohol content percentage |
+| quality | Wine quality score (target variable) |
 
 ---
 
-## 🔍 EDA Workflow
-
-* Data loading and inspection
-* Handling missing values and duplicates
-* Descriptive statistical analysis
-* Univariate analysis (histograms, box plots)
-* Bivariate analysis (scatter plots, bar plots)
-* Correlation analysis using heatmaps
-* Outlier detection using IQR method
+## Tools & Libraries
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
 ---
 
-## 📈 Key Insights
-
-* Alcohol content shows a strong positive correlation with wine quality
-* Higher volatile acidity negatively impacts quality
-* Most wine samples are rated between **5 and 6**
-* Several features are skewed and may require transformation
-
----
-
-## 🛠 Tools & Technologies
-
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
+## Project Structure
+```
+├── Wine_Quality_Analysis.ipynb   # Main EDA notebook
+├── WineQT.csv                    # Dataset
+└── README.md                     # Project documentation
+```
 
 ---
 
-## 🚀 Results
+## Key Findings
+- **Alcohol** is the strongest positive predictor of wine quality (correlation: 0.48)
+- **Volatile acidity** is the strongest negative factor — high levels produce a vinegary taste and lower quality scores
+- **Citric acid** and **sulphates** have a mild positive influence on quality
+- **Density** decreases as quality increases, largely due to its relationship with alcohol content
+- The dataset is clean with no missing values, but several features contain outliers that reflect genuine variation in wine samples
 
-The project provides actionable insights into wine quality factors and creates a solid foundation for building **classification or regression models** to predict wine quality.
+---
+
+## EDA Sections
+1. Importing Libraries
+2. Loading the Data
+3. Data Overview & Descriptive Statistics
+4. Outlier Detection
+5. Correlation Analysis
+6. Feature vs Quality Analysis
+7. Pairplot of Key Features
+8. Conclusion & Next Steps
+
+---
+
+## How to Run
+1. Clone the repository
+```bash
+git clone https://github.com/your-username/wine-quality-eda.git
+```
+2. Install the required libraries
+```bash
+pip install pandas numpy matplotlib seaborn
+```
+3. Open the notebook
+```bash
+jupyter notebook Wine_Quality_Analysis.ipynb
+```
+4. Update the dataset path in the loading cell to point to your local `WineQT.csv` file
+
+---
+
+## What's Next
+- Build a classification model (Random Forest / Logistic Regression) to predict wine quality
+- Handle class imbalance in quality scores
+- Engineer new features by combining correlated variables
+- Bin quality into Low (3–4), Medium (5–6), High (7–8) for a simpler prediction problem
